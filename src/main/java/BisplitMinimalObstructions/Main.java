@@ -46,7 +46,7 @@ public class Main {
       sc.useDelimiter("\n");
 
       System.out.print("\n\nSeleccione la acción que desea realizar:\n" +
-      "\n\t(0) Decide si una gráfica contiene una obstrucción minima para las " +
+      "\n\t(0) Decide si una gráfica contiene una obstrucción mínima para las " +
       "\n\t    gráficas bisplit o alguna subgráfica isomorfa a P5 o House\n" +
       // [AGREGAR SUCESIÓN DE GRADOS, DAR LA PARTICIÓN COMPLETA,
       // NOMBRAR LA OBSMIN NO SOLO SU G6,
