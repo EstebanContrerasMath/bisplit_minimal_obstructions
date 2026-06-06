@@ -303,6 +303,28 @@ public LinkedList<Integer> sucesionDeGrados() {
   return dS;
 }
 
+/**
+ * Determina si la gráfica que manda a llamar el método es obstrucción mínima
+ * para las gráficas co-Bisplit
+ *
+ * @return true si la gráfica es obstrucción minima para coBisplit, y false en
+ * otro caso
+ */
+public boolean esObsminCoBisplit() {
+  /* Verificar que sea obstrucción */
+  if (this.esCoBisplit()) {
+    return false;
+  } else { /* Verificar minimalidad */
+    for (int i=0; i<this.orden; i++) {
+      Grafica H = this.borrarVertices(new LinkedList<>(Arrays.asList(i)));
+      if (!H.esCoBisplit()) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
 
 /* # # # # # # # # # # # # #  MÉTODOS   AUXILIARES  # # # # # # # # # # # # # */
   
@@ -1632,20 +1654,6 @@ public boolean esConexa() {
 
 
 
-//   public boolean esObsmincoBisplit() {
-//     /* Verificar que sea obstrucción */
-//     if (this.esCoBisplit()) {
-//       return false;
-//     } else { /* Verificar minimalidad */
-//       for (int i=0; i<this.orden; i++) {
-//         Grafica H = this.borrarVertices(new LinkedList<>(Arrays.asList(i)));
-//         if (!H.esCoBisplit()) {
-//           return false;
-//         }
-//       }
-//     }
-//     return true;
-//   }
 
 
 
